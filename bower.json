@@ -1,0 +1,25 @@
+{
+  "name": "auto",
+  "authors": [
+    "Pablo Grant <grant_pablo@yahoo.com>"
+  ],
+  "description": "\"Buy and sell cars in an auction like style\"",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.7",
+    "firebase": "^3.2.0",
+    "angular-route": "^1.5.7",
+    "ngUpload": "^0.5.19",
+    "angularfire": "^2.0.2"
+  }
+}
