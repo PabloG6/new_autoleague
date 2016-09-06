@@ -8,24 +8,30 @@
         //push information to firebase
         var vm = this;
 
-
         vm.product = {};
-        vm.submit = function (){
-            
-            var reference = firebase.database().ref("products");
-        
-            var storage = firebase.storage().ref();
-            
-            var storageReference = storage.child("product_images");
-            
-            
-            var key = reference.push(vm.product);
-            $location.path("/catalog")
+
+
+            function submit(isValid){
+
+                var reference = firebase.database().ref("products");
+
+                var storage = firebase.storage().ref();
+
+                var storageReference = storage.child("product_images");
+
+
+                var key = reference.push(vm.product);
+                $location.path("/catalog")
+
+
             
             
            
 
-        };
+        }
+
+        vm.submit = submit;
+
 
         function searchFunction(searchValue){
             //search function should lead to

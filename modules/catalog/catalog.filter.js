@@ -4,7 +4,7 @@
 (
     function(){
         "use strict";
-        console.log("run block of code");
+
         function CatalogFilter(){
 
             function search(input){

@@ -1,3 +1,84 @@
-<div>
-    <h2>Hello just a test</h2>
-</div>
+<html >
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  >
+</head>
+<body ng-app="app.auto.test" ng-controller="TestController as vm">
+
+    <h2>Hello just a test, My first name is {{first_name}}</h2>
+    <form name="vm.Form" ng-submit="submitForm(vm.Form.$invalid)" novalidate>
+            <strong>{{vm.Form.name.$pristine}}</strong>
+        <div ng-class="{'has-error':vm.Form.$invalid}">
+
+        <input type="text" ng-model="first_name" placeholder="Pablo" id="first_name" name="name" required>
+            </div> <br>
+        <input type="submit" value="submit" >
+        <button ng-click="submitForm(Form.$valid)">Submit</button>
+
+    </form>
+</body>
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script src="../../bower_components/angularfire/dist/angularfire.js"></script>
+
+<script src="test.module.js"></script>
+<script src="test.controller.js"></script>
+</html>
+
+<!-- index.html -->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+    <!--&lt;!&ndash; CSS ===================== &ndash;&gt;-->
+    <!--&lt;!&ndash; load bootstrap &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">-->
+    <!--<style>-->
+        <!--body    { padding-top:30px; }-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; JS ===================== &ndash;&gt;-->
+    <!--&lt;!&ndash; load angular &ndash;&gt;-->
+    <!--<script src="http://code.angularjs.org/1.2.6/angular.js"></script>-->
+    <!--<script src="test.module.js"></script>-->
+    <!--<script src="test.controller.js"></script>-->
+<!--</head>-->
+
+<!--&lt;!&ndash; apply angular app and controller to our body &ndash;&gt;-->
+<!--<body ng-app="validationApp" ng-controller="mainController">-->
+<!--<div class="container">-->
+    <!--<div class="col-sm-8 col-sm-offset-2">-->
+
+        <!--&lt;!&ndash; PAGE HEADER &ndash;&gt;-->
+        <!--<div class="page-header"><h1>AngularJS Form Validation</h1></div>-->
+
+        <!--&lt;!&ndash; FORM &ndash;&gt;-->
+        <!--&lt;!&ndash; pass in the variable if our form is valid or invalid &ndash;&gt;-->
+        <!--<form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate> &lt;!&ndash; novalidate prevents HTML5 validation since we will be validating ourselves &ndash;&gt;-->
+
+            <!--&lt;!&ndash; NAME &ndash;&gt;-->
+            <!--<div class="form-group">-->
+                <!--<label>Name</label>-->
+                <!--<input type="text" name="name" class="form-control" ng-model="name" required>-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash; USERNAME &ndash;&gt;-->
+            <!--<div class="form-group">-->
+                <!--<label>Username</label>-->
+                <!--<input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash; EMAIL &ndash;&gt;-->
+            <!--<div class="form-group">-->
+                <!--<label>Email</label>-->
+                <!--<input type="email" name="email" class="form-control" ng-model="email">-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash; SUBMIT BUTTON &ndash;&gt;-->
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+
+        <!--</form>-->
+
+    <!--</div>&lt;!&ndash; col-sm-8 &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /container &ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->

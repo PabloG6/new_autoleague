@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app.auto.add" >
+<html ng-app="app.auto.add" xmlns="http://www.w3.org/1999/html">
 <head>
 	
 
@@ -18,6 +18,9 @@
 
     <!-- Page Title -->
 	<title>Add</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		  crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/style980.css" />
 	<link rel="stylesheet" type="text/css" href="css/style800.css" />
@@ -40,8 +43,9 @@
 	<script type="text/javascript" src="js/jquery.checkbox.js"></script>
 	<script type="text/javascript" src="js/js.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-<body class="sell" ng-controller="AddController as vm">
+<body class="sell" ng-controller="AddController">
 	<!--BEGIN HEADER-->
+
 		<div id="header">
 			<div class="top_info">
 				<div class="logo">
@@ -99,128 +103,61 @@
 						<h3>Sell ​​your car on <strong>AutoDealer</strong> and benefit from more than 1 million potential buyers every month!</h3>
 						<p>Required fields are marked with *<br />Please post offers only on the car (parts are a special category).<br />If you are a dealer, please visit the dealers section<br />If you have difficulties in posting an offer on the website, please call 0742 016 570</p>
 					</div>
+					<form name="vm.carForm" ng-submit="vm.submit(vm.carForm.$valid)" novalidate>
 					<div class="sell_box sell_box_1">
 						<h2><strong>Vehicle</strong> data</h2>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Manufacturer:</strong></label>
-							<select class="select_5" ng-model="vm.product.manufacturer">
-								<option/>Select
-								<option value="Audi" />Audi
-								<option value="Mercedes Benz" />Mercedes-Benz
-								<option value="BMW" />BMW
-								<option value="Lexus" >Lexus</option>
-								<option value="Lincoln" />Lincoln
-								<option value="Ford" />Ford
-								<option value="Fiat" />Fiat
-								<option value="Dodge" />Dodge
-                                
-							</select>
+							<input class="txb" type="text" ng-model="vm.product.manufacturer" required>
+
 
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Model: </strong></label>
-							<select class="select_5" ng-model="vm.product.model">
-								<option/>Select
-								<option value="R8" />R8
-								<option value="S500" />S500
-								<option value="540i" />540i
-								<option value="RX300" />RX300
-								<option value="Navigator" />Navigator
-								<option value="Taurus" />Taurus
-								<option value="Doblo" />Doblo
-								<option value="Viper" />Viper
-							</select>
+							<input type="text" class="txb" ng-model="vm.product.model" required>
+
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Fabrication:</strong></label>
-							<select class="select_5" ng-model="vm.product.year">
-								<option/>Select
-								<option value="2013" />2013
-								<option value="2012" />2012
-								<option value="2011" />2011
-								<option value="2010" />2010
-								<option value="2009" />2009
-								<option value="2008" />2008
-								<option value="2007" />2007
-								<option value="2006" />2006
-							</select>
+							<input type="text" class="txb" ng-model="vm.person.product.year" required>
 						</div>
 						<div class="select_wrapper last" >
-							<label><span>* </span><strong>Body Type: :</strong></label>
-							<select class="select_5" ng-model="vm.product.body_type">
-								<option/>Select
-								<option value="Sedan" />Sedan
-								<option value="Coupe" />Coupe
-								<option value="SUV" />SUV
-								<option value="Hatchback" />Hatchback
-								<option value="Tagra" />Tagra
-							</select>
+							<label><span>* </span><strong>Body Type:</strong></label>
+							<input type="text" class="txb" ng-model="vm.person.product.body_type">
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Fuel Type:</strong></label>
-							<select class="select_5" ng-model="vm.product.fuel_type">
-								<option value="" />Select
-								<option value="92" />92
-								<option value="95" />95
-								<option value="Diesel" />Diesel
-							</select>
+							<input type="text" class="txb" ng-model="vm.product.fuel_type" required>
+
+
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Transmission</strong></label>
-							<select class="select_5" ng-model="vm.product.transmissions">
-								<option value="" />Select
-								<option value="Auto" />Auto
-								<option value="Mechanic" />Mechanic
-							</select>
+							<input type="text" class="txb" ng-model="vm.product.transmissions">
+
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Doors:</strong></label>
-							<select class="select_5" ng-model="vm.product.doors">
-								<option value="" />Select
-								<option value="2" />2
-								<option value="3" />3
-								<option value="4" />4
-								<option value="5" />5
-							</select>
+							<input class="txb" ng-model="vm.product.doors">
+
 						</div>
 						<div class="select_wrapper last">
 							<label><span>* </span><strong>Cilindrics </strong> (in cm3):</label>
-							<select class="select_5" ng-model="vm.product.cylindrics">
-								<option />Select
-								<option value="1500" />1500
-								<option value="1500" />2000
-								<option value="1500" />2500
-								<option value="3000" />3000
-								<option value="3000" />4000
-							</select>
+							<input class="txb" ng-model="vm.product.cylindrics">
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Hp / Kw:</strong></label>
-							<select class="select_5" ng-model="vm.product.hp_kw">
-								<option value="0" />Select
-								<option value="50" />50
-								<option value="60" />60
-								<option value="70" />70
-								<option value="80" />80
-								<option value="90" />90
-								<option value="100" />100
-							</select>
+							<input class="txb" ng-model="vm.product.hp_kw">
+
 						</div>
 						<div class="input_wrapper large">
 							<label><span>* </span><strong>VIN / chassis number:</strong></label>
-							<input type="text" class="txb large" value="" ng-model="vm.model.vin_chassis"/>
+							<input type="text" class="txb" value="" ng-model="vm.product.vin_chassis"/>
 						</div>
 						<div class="select_wrapper last">
 							<label><span>* </span><strong>Color:</strong></label>
-							<select class="select_5" ng-model="vm.model.color">
-								<option />Select
-								<option value="Red" />Red
-								<option value="Green" />Green
-								<option value="Blue" />Blue
-								<option value="Grey" />Grey
-								<option value="White" />White
-								<option value="Black" />Black
-							</select>
+							<input class="txb" ng-model="vm.model.color">
+
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -286,7 +223,7 @@
 							</span>
 						</div>
 						<div class="chb_group">
-							<span class="custom_chb_wrapper">
+							<span class="custom_chb_wrapper" >
 								<span class="custom_chb">
 									<input type="checkbox" name="" 
 									ng-model="vm.product.equipment.eds"
@@ -556,57 +493,26 @@
 						<div class="clear"></div>
 					</div>
 					<div class="sell_box sell_box_1">
+
 						<h2><strong>Vehicle</strong> registration</h2>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Country of Origin:</strong></label>
-							<select class="select_5" ng-model="vm.product.country_of_origin">
-								<option value="0" />Select
-								<option value="1" />Germany
-								<option value="2" />Great Britain
-								<option value="3" />USA
-								<option value="4" />China
-								<option value="5" />Japan
-								<option value="6" />Russia
-								<option value="7" />Ukraine
-							</select>
+							<input class="txb" type="text" ng-model="vm.product.country_of_origin">
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Country of registration: </strong></label>
-							<select class="select_5">
-								<option value="0" />Select
-								<option value="1" />Germany
-								<option value="2" />Great Britain
-								<option value="3" />USA
-								<option value="4" />China
-								<option value="5" />Japan
-								<option value="6" />Russia
-								<option value="7" />Ukraine
-							</select>
+							<input class="txb" type="text">
+
 						</div>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Date of first registration:</strong></label>
-							<select class="select_5">
-								<option value="0" />Month
-								<option value="1" />2013
-								<option value="2" />2012
-								<option value="3" />2011
-								<option value="4" />2010
-								<option value="5" />2009
-								<option value="6" />2008
-								<option value="7" />2007
-								<option value="8" />2006
-							</select>
+							<input class="txb" type="text">
+
 						</div>
 						<div class="select_wrapper last">
 							<label><span>* </span><strong>Body Type:</strong></label>
-							<select class="select_5" ng-model="vm.product.body_type">
-								<option value="0" />Year
-								<option value="1" />Sedan
-								<option value="2" />Coupe
-								<option value="3" />SUV
-								<option value="4" />Hatchback
-								<option value="5" />Tagra
-							</select>
+							<input class="txb" ng-model="vm.product.body_type">
+
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -614,24 +520,17 @@
 						<h2><strong>Technical</strong> condition</h2>
 						<div class="select_wrapper">
 							<label><span>* </span><strong>Technical condition: </strong></label>
-							<select class="select_5" ng-model="vm.product.technical_condition">
-								<option value="0" />Select
-								<option value="1" />Technical condition
-								<option value="2" />Technical condition
-							</select>
+							<input type="text" class="txb" ng-model="vm.product.technical_condition">
+
 						</div>
 						<div class="input_wrapper">
 							<label><span>* </span><strong>Kilometers: </strong></label>
-							<input type="text" class="txb" value="" ng-model="vm.product.kilometers" />
+							<input type="text" class="txb" ng-model="vm.product.kilometers" ng-pattern="/^\d+$s/" required/>
 						</div>
 						<div class="select_wrapper">
 							<label><strong>Euro type:</strong></label>
-							<select class="select_5" ng-model="vm.product.euro_type">
-								<option value="0" />Month
-								<option value="1" />Euro type
-								<option value="2" />Euro type
-								<option value="3" />Euro type
-							</select>
+							<input type="text" class="txb" ng-model="vm.product.euro_type">
+
 						</div>
 						<div class="input_wrapper last">
 							<label><strong>CO2 emissions:</strong></label>
@@ -648,7 +547,7 @@
 						</div>
 						<div class="input_wrapper">
 							<label><span>* </span><strong>Currency: </strong></label>
-							<select class="select_5">
+							<select class="txb">
 								<option value="0" />Euro
 								<option value="1" />USD
 							</select>
@@ -739,72 +638,65 @@
 					</div>
 					<div class="sell_box sell_box_5">
 						<h2><strong>Seller</strong> details</h2>
-						<div class="input_wrapper">
-							<label><span>* </span><strong>Name: </strong></label>
-							<input type="text" class="txb" value="" />
+						<div class="input_wrapper" ng-class="{'has-error':vm.carForm.name.$pristine && vm.carForm.name.$invalid}" >
+							<label><span>* </span><strong>First Name: </strong></label>
+							<input type="text" class="txb" value="" name="name" ng-model="vm.user_details.first_name" ng-minlength="2" required/>
 						</div>
+                        <div class="input_wrapper">
+                            <label><span>* </span><strong>Last Name</strong>
+                            </label>
+                            <input type="text" class="txb" name="name"  ng-model="vm.user_details.last_name" required>
+                        </div>
 						<div class="input_wrapper">
 							<label><span>* </span><strong>Phone: </strong></label>
-							<input type="text" class="txb" value="" />
+							<input type="text" class="txb" value="" id="phone" required ng-model="vm.user_details.phone_number"/>
 						</div>
 						<div class="input_wrapper">
 							<label><span>* </span><strong>Phone 2: </strong></label>
-							<input type="text" class="txb" value="" />
+							<input type="text" class="txb" id="phone_2" ng-model="vm.user_details.phone_number_2" />
 						</div>
-						<div class="input_wrapper last">
+
+									<div class="input_wrapper last">
 							<label><span>* </span><strong>City:</strong></label>
-							<input type="text" class="txb" value="" />
+							<input type="text" class="txb" value="" id="city" ng-model="vm.user_details.city"  />
 						</div>
 						<div class="select_wrapper">
 							<label><strong>Country: </strong></label>
-							<select class="select_5" ng-model="vm.product.user.country">
-								<option value="0" />Select
-								<option value="1" />Germany
-								<option value="2" />Great Britain
-								<option value="3" />USA
-								<option value="4" />China
-								<option value="5" />Japan
-								<option value="6" />Russia
-								<option value="7" />Ukraine
-							</select>
+							<input class="txb" ng-model="vm.user_details.country" id="country">
 						</div>
 						<div class="select_wrapper">
 							<label><strong>State: </strong></label>
-							<select class="select_5" ng-model="vm.product.seller.state">
-								<option value="0" />Select
-								<option value="Germany" />Germany
-								<option value="Britain" />Great Britain
-								<option value="USA" />USA
-								<option value="China" />China
-								<option value="Japan" />Japan
-								<option value="Russia" />Russia
-								<option value="Ukraine" />Ukraine
-							</select>
+							<input class="txb" ng-model="vm.user_details.state" id="state">
+
 						</div>
 						<div class="input_wrapper">
 							<label><span>* </span><strong>E-mail: </strong></label>
-							<input type="text" class="txb" value="" ng-model="vm.product.seller.state"/>
+							<input type="text" class="txb" value="" ng-model="vm.user_details.email" id="email" required/>
 						</div>
+
+
 						<div class="input_wrapper last">
 							<label><span>* </span><strong>Password:</strong></label>
-							<input type="password" class="txb" value="" 
-                                   vm.product.seller.password/>
+							<input type="password" class="txb" value="" id="password"
+                                   vm.user_details.password required/>
                         </div>
                                    
 						<div class="clear">
                         </div>
 					</div>
+
 					<div class="sell_submit_wrapper">
 						<span class="custom_chb_wrapper fL">
 							<span class="custom_chb">
-								<input type="checkbox" name=""/>
+								<input type="checkbox" required/>
 							</span>
 							<label>I agree to the Terms and Conditions</label>
 						</span>
 
-						<input type="submit" value="Submit" class="sell_submit" ng-click="vm.submit()"/>
+						<input type="submit" value="Submit" class="sell_submit" ng-disabled="vm.carForm.$invalid"/>
 						<div class="clear"></div>
 					</div>
+                        </form>
 				</div>
 			</div>
 		</div>
@@ -907,6 +799,7 @@ Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eius  mod temp
 				<div class="copyright">&copy; 2013 Auto Sale. All Rights Reserved.</div>
 			</div>
 		</div>
+
 	<!--EOF FOOTER-->
     <script src="bower_components/angular/angular.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
